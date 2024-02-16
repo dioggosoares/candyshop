@@ -2,9 +2,9 @@ import { formatDistanceToNow } from 'date-fns'
 import { ptBR } from 'date-fns/locale'
 import { ArrowRight, X } from 'lucide-react'
 
-import { OrderStatus } from '@/components/order-status'
 import { Button } from '@/components/ui/button'
 import { TableCell, TableRow } from '@/components/ui/table'
+import { OrderStatus } from '@/pages/app/orders/order-status'
 
 import { OrderDetails } from './order-details'
 
