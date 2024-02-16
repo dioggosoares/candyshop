@@ -15,8 +15,8 @@ const orderStatusMap: Record<OrderStatusType, string> = {
   pending: 'Pendente',
   canceled: 'Cancelado',
   delivered: 'Entregue',
-  delivering: 'À caminho',
-  processing: 'Preparando',
+  delivering: 'Em entrega',
+  processing: 'Em preparo',
 }
 
 export function OrderStatus({ status }: OrderStatusProps) {
@@ -24,10 +24,10 @@ export function OrderStatus({ status }: OrderStatusProps) {
     <div className="flex items-center gap-2">
       <span
         className={cn('size-2 rounded-full', {
-          'bg-slate-400': status === 'pending',
+          'bg-amber-500': status === 'pending',
           'bg-rose-500': status === 'canceled',
           'bg-emerald-500': status === 'delivered',
-          'bg-amber-500': ['processing', 'delivering'].includes(status),
+          'bg-blue-600': ['processing', 'delivering'].includes(status),
         })}
       />
       <span className="fonte-medium text-muted-foreground">

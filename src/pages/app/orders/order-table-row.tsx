@@ -11,7 +11,7 @@ import { OrderDetails } from './order-details'
 interface OrderTableRowProps {
   order: {
     orderId: string
-    createdAt: Date
+    createdAt: string
     status: 'pending' | 'canceled' | 'processing' | 'delivering' | 'delivered'
     customerName: string
     total: number
@@ -29,8 +29,8 @@ export function OrderTableRow({ order }: OrderTableRowProps) {
       </TableCell>
       <TableCell className="text-muted-foreground">
         {formatDistanceToNow(order.createdAt, {
-          addSuffix: true,
           locale: ptBR,
+          addSuffix: true,
         })}
       </TableCell>
       <TableCell>
