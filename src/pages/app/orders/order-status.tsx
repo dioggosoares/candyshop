@@ -1,6 +1,6 @@
 import { cn } from '@/lib/utils'
 
-type OrderStatusType =
+export type OrderStatusType =
   | 'pending'
   | 'canceled'
   | 'processing'
@@ -24,10 +24,11 @@ export function OrderStatus({ status }: OrderStatusProps) {
     <div className="flex items-center gap-2">
       <span
         className={cn('size-2 rounded-full', {
-          'bg-amber-500': status === 'pending',
+          'bg-slate-500': status === 'pending',
           'bg-rose-500': status === 'canceled',
+          'bg-amber-500': status === 'processing',
+          'bg-orange-500': status === 'delivering',
           'bg-emerald-500': status === 'delivered',
-          'bg-blue-600': ['processing', 'delivering'].includes(status),
         })}
       />
       <span className="fonte-medium text-muted-foreground">
