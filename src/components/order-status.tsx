@@ -23,6 +23,7 @@ export function OrderStatus({ status }: OrderStatusProps) {
   return (
     <div className="flex items-center gap-2">
       <span
+        data-testid="badge"
         className={cn('size-2 rounded-full', {
           'bg-slate-500': status === 'pending',
           'bg-rose-500': status === 'canceled',
