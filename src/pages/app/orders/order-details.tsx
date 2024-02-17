@@ -22,6 +22,7 @@ import {
   DrawerTrigger,
 } from '@/components/ui/drawer'
 
+import { OrderDetailsSkeleton } from './order-details-skeleton'
 import { OrderTableDetails } from './order-table-details'
 
 interface OrderDetailsProps {
@@ -59,7 +60,11 @@ export function OrderDetails({
               <DialogDescription>Detalhes do pedido</DialogDescription>
             </DialogHeader>
 
-            {order && <OrderTableDetails order={order} />}
+            {order ? (
+              <OrderTableDetails order={order} />
+            ) : (
+              <OrderDetailsSkeleton />
+            )}
           </DialogContent>
         </Dialog>
       ) : (
@@ -76,7 +81,11 @@ export function OrderDetails({
               <DrawerDescription>Detalhes do pedido</DrawerDescription>
             </DrawerHeader>
 
-            {order && <OrderTableDetails order={order} />}
+            {order ? (
+              <OrderTableDetails order={order} />
+            ) : (
+              <OrderDetailsSkeleton />
+            )}
           </DrawerContent>
         </Drawer>
       )}
