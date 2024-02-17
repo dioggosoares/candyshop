@@ -2,6 +2,7 @@ import { formatDistanceToNow } from 'date-fns'
 import { ptBR } from 'date-fns/locale'
 
 import { GetOrderDetailsResponse } from '@/api/get-order-details'
+import { OrderStatus } from '@/components/order-status'
 import {
   Table,
   TableBody,
@@ -11,8 +12,6 @@ import {
   TableHeader,
   TableRow,
 } from '@/components/ui/table'
-
-import { OrderStatus } from './order-status'
 
 interface OrderTableDetailsProps {
   order: GetOrderDetailsResponse

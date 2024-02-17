@@ -9,9 +9,9 @@ import { cancelOrder } from '@/api/cancel-order'
 import { deliverOrder } from '@/api/deliver-order'
 import { dispatchOrder } from '@/api/dispatch-order'
 import { GetOrdersResponse } from '@/api/get-orders'
+import { OrderStatus, OrderStatusType } from '@/components/order-status'
 import { Button } from '@/components/ui/button'
 import { TableCell, TableRow } from '@/components/ui/table'
-import { OrderStatus, OrderStatusType } from '@/pages/app/orders/order-status'
 
 import { OrderDetails } from './order-details'
 
