@@ -1,7 +1,24 @@
+import Cookies from 'js-cookie'
 import { Donut } from 'lucide-react'
-import { Outlet } from 'react-router-dom'
+import { useEffect } from 'react'
+import { Outlet, useNavigate } from 'react-router-dom'
 
 export function AuthLayout() {
+  const navigate = useNavigate()
+
+  useEffect(() => {
+    const token = Cookies.get('auth')
+
+    if (token !== null || token !== undefined) {
+      navigate('/', { replace: true })
+      return
+    }
+
+    navigate('/sign-in', { replace: true })
+
+    return () => {}
+  }, [navigate])
+
   return (
     <div className="grid min-h-screen grid-cols-2 antialiased">
       <div
